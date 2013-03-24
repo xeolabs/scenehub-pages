@@ -22,21 +22,40 @@
 
     <h1>SceneHub</h1>
 
-    <a href="https://github.com/xeolabs/scenehub/wiki/Examples-Index">Examples</a>&nbsp;|&nbsp;<a href="https://github.com/xeolabs/scenehub/wiki">Documentation</a>&nbsp;|&nbsp;<a href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>
+    <a href="https://github.com/xeolabs/scenehub/wiki/Features">Features</a>&nbsp;|&nbsp;<a
+        href="https://github.com/xeolabs/scenehub/wiki/Examples-Index">Examples</a>&nbsp;|&nbsp;<a
+        href="https://github.com/xeolabs/scenehub/wiki">Documentation</a>&nbsp;|&nbsp;<a
+        href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>
     <br>
 
     <h2>Scalable JSON-Based WebGL Asset Repository</h2>
 
-    <p class="elevatorPitch">Build 3D scenes fast from a reusable library of geometries, shaders, textures and
-        sounds</p>
+    <p class="elevatorPitch">Build 3D scenes fast from a library of reusable assets</p>
 
     <br>
     <br>
 
-    <p>First, link to the <a href="http://xeolabs.github.com/scenehub/api/v0/scenehub.js">SceneHub API library</a> in your page:</p>
+    <p>SceneHub is an extensible repository of SceneJS assets with a scene
+        builder
+        API
+        that you hotlink into your page, which will pull in assets on-demand (and cross-domain) as you build scenes with it.</p>
+
+    <p>The scene builder is a wrapper for SceneJS, using <a
+            href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
+        to give you
+        a streamlined <strong>SceneJS-on-rails</strong> experience festooned with defaults that you override
+        where you need
+        more control.</p>
+
+    <p>The reuse is ridiculously flexible and possible at multiple levels: geometries, appearances, shaders, sounds,
+        objects, object graphs, and even entire scenes. You don't even need to use the assets - if you wish, define
+        your geometries, appearances etc. in your scene definition and just use the API for its streamlined goodness.</p>
+
+    <p>First, hotlink to the <a href="http://xeolabs.github.com/scenehub/api/v0/scenehub.js">SceneHub API library</a>:
+    </p>
 
     <pre>&lt;script src="http://xeolabs.github.com/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
-    <p>Then get yourself a client and build a scene. We're going to build an articulated object hierarchy using
+    <p>Then build a scene - we're going to build an articulated object hierarchy using
         one geometry asset and a couple of surface appearance assets:</p>
 
         <pre>
