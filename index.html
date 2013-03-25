@@ -14,6 +14,26 @@
           href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono&v2">
 
     <link href="css/styles.css" rel="stylesheet"/>
+    <style>
+        p.sectionHeading {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 20px;
+            padding-top: 15px;
+        }
+
+        p.bulletHeading {
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 0px;
+        }
+
+        p {
+            padding-top: 0;
+            margin-top: 5px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -22,8 +42,8 @@
 
     <h1>SceneHub</h1>
 
-    <a href="https://github.com/xeolabs/scenehub/wiki/Features">Features</a>&nbsp;|&nbsp;<a
-        href="https://github.com/xeolabs/scenehub/wiki/Examples-Index">Examples</a>&nbsp;|&nbsp;<a
+    <a
+        href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/wiki">Documentation</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>
     <br>
@@ -34,32 +54,50 @@
 
     <br>
     <br>
-    <img src="images/crane.jpg" width="900px" height="300px"/>
+    <img src="images/crane.jpg" width="900px" height="260px"/>
 
-    <p>SceneHub is an extensible repository of SceneJS assets with a scene
-        builder
-        API
-        that you hotlink into your page, which will pull in assets on-demand (and cross-domain) as you build scenes with
-        it.</p>
+    <div style="width:100%;">
+        <div style="float:left; width:30%;padding:10px;">
+            <p class="sectionHeading">Features</p>
+            <ul>
+                <li><p class="bulletHeading">Scalable</p>
 
-    <p>The scene builder is a wrapper for SceneJS, using <a
-            href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
-        to give you
-        a streamlined <strong>SceneJS-on-rails</strong> experience festooned with defaults that you override
-        where you need
-        more control.</p>
+                    <p>An extensible library of JSON-encoded WebGL assets</p></li>
+                <li><p class="bulletHeading">Build a scene anywhere</p>
 
-    <p>The reuse is ridiculously flexible and possible at multiple levels: geometries, appearances, shaders, sounds,
-        objects, object graphs, and even entire scenes. You don't even need to use the assets - if you wish, define
-        your geometries, appearances etc. in your scene definition and just use the API for its streamlined
-        goodness.</p>
+                    <p>Hotlink the API script into your page or blog and start building scenes containing assets. The
+                        assets are loaded on-demand and cross-domain - just reference them by ID.</p></li>
+                <li><p><strong>SceneJS on rails</strong><br>The API is a wrapper for SceneJS, giving you a powerful
+                    SceneJS-on-rails experience. You can skip the asset library altogether and just use the API as a
+                    stand-alone WebGL engine.
+                </p>
+                </li>
 
-    <p>First, hotlink to the <a href="http://xeolabs.github.com/scenehub/api/v0/scenehub.js">SceneHub API library</a>:
-    </p>
+                <li><p class="bulletHeading">Plug and play</p>
 
-    <pre>&lt;script src="http://xeolabs.github.com/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
-    <p>Then build a scene - we're going to build an articulated object hierarchy using
-        one geometry asset and a couple of surface appearance assets:</p>
+                    <p>Asset reuse at multiple levels: attributes, objects, object graphs, and even entire
+                        scenes</p>
+                </li>
+                <li><p><strong>Open Source</strong><br>Licensed under both the GPL and MIT licenses - pick whichever.
+                </p>
+                </li>
+                <li><p class="bulletHeading">Fork it</p>
+
+                    <p>Fork the repository and add your own assets. Want to share them? Submit a pull
+                        request.</p>
+                </li>
+            </ul>
+        </div>
+        <div style="float:left; width:65%; padding-left:25px; padding-top:10px;">
+            <p class="sectionHeading">Quick Start</p>
+
+            <p>First, hotlink to the <a href="http://xeolabs.github.com/scenehub/api/v0/scenehub.js">SceneHub API
+                library</a>:
+            </p>
+
+            <pre>&lt;script src="http://xeolabs.github.com/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
+            <p>Then build a scene - we're going to build an articulated object hierarchy using
+                one geometry asset and a couple of surface appearance assets:</p>
 
         <pre>
 
@@ -94,10 +132,10 @@ var scene = scenehub.createScene({
     ]
 });
 </pre>
-    Voilà - up pops a canvas containing our scene:
-    <img src="">
+            Voilà - up pops a canvas containing our scene:
+            <img src="">
 
-    Now let's update the scale and position of one of the objects:
+            Now let's update the scale and position of one of the objects:
 <pre>
 scene.on("objects.superman",
     function (superman) {
@@ -107,7 +145,8 @@ scene.on("objects.superman",
         });
     });
         </pre>
-
+        </div>
+    </div>
 </div>
 
 
