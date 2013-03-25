@@ -33,52 +33,89 @@
             margin-top: 5px;
         }
 
+        .col {
+            background-image: url('images/column.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+
+        .left {
+            float: left;
+            width: 30%;
+            padding: 10px;
+        }
+
+        .right {
+            float: left;
+            width: 65%;
+            padding-left: 25px;
+            padding-top: 10px;
+        }
+
     </style>
 </head>
 <body>
 
-<div id="container">
+<div id="header">
     <a href="http://xeolabs.com"><img style="float: right; padding-top:35px;" src="images/a-xeolabs-project.png"></a>
 
     <h1>SceneHub</h1>
 
-    <a
-            href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
-        href="https://github.com/xeolabs/scenehub/wiki">Documentation</a>&nbsp;|&nbsp;<a
-        href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>
+    <a href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
+        href="https://github.com/xeolabs/scenehub/wiki">Docs</a>&nbsp;|&nbsp;<a
+        href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>&nbsp;|&nbsp;<a
+        href="http://xeolabsblog.blogspot.de/search/label/scenehub">Blog</a>
     <br>
 
-    <h2>Scalable JSON-Based WebGL Asset Repository</h2>
+    <h2>Build WebGL scenes fast</h2>
+    <p class="elevatorPitch">An JSON-based 3D engine with a shared public asset repository</p>
+</div>
+<div id="image">
+    <img src="images/crane.jpg" width="920px" height="260px"/>
+</div>
 
-    <p class="elevatorPitch">Build 3D scenes fast on a library of reusable assets</p>
-
-    <br>
-    <br>
-    <img src="images/crane.jpg" width="900px" height="260px"/>
-
+<div id="container">
     <div style="width:100%;">
-        <div style="float:left; width:30%;padding:10px;">
+        <div class="col left">
             <p class="sectionHeading">Features</p>
             <ul>
-                <li><p class="bulletHeading">Scalable</p>
-
-                    <p>An extensible library of JSON-encoded WebGL assets</p></li>
                 <li><p class="bulletHeading">Build a scene in minutes</p>
 
-                    <p>Hotlink to the API script and build scenes in JSON. As you reference assets the API loads
-                        them on-demand, cross-domain. Great for code sharing.</p></li>
-
-                <li><p><strong>SceneJS on rails</strong><br>The API is built around <a href="http://scenejs.org">SceneJS
-                    V3</a> and follows <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
-                    to provide a very slick scene building experience. Skip the asset repository altogether if you
-                    want to manage the assets yourself and use the API as a stand-alone WebGL engine.
-                </p>
+                    <p>Just load the API library and start building 3D scenes in JSON. The API is a
+                        richly-featured WebGL engine built around <a href="http://scenejs.org">SceneJS V3</a> that
+                        follows
+                        <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
+                        to provide a slick "SceneJS on rails" experience.
+                    </p>
                 </li>
 
                 <li><p class="bulletHeading">Plug and play</p>
 
-                    <p>Almost everything is a reusable asset: attributes, objects, object graphs, and even entire
-                        scenes.</p>
+                    <p>By default, the API is hooked into a GitHub <a
+                            href="https://github.com/xeolabs/scenehub/blob/master/assets/" target="other">repository</a>
+                        of generic JSON-encoded WebGL assets. When you reference those assets by their IDs,
+                        the API will transparently fetch them cross-domain. Sweet for code sharing.</p>
+                </li>
+
+                <li><p class="bulletHeading">DRY to the max</p>
+
+                    <p>Almost anything can be an asset: <a
+                            href="https://github.com/xeolabs/scenehub/blob/master/assets/appearance">appearances</a>,
+                        <a
+                                href="https://github.com/xeolabs/scenehub/blob/master/assets/geometry">geometries</a>,
+                        <a
+                                href="https://github.com/xeolabs/scenehub/blob/master/assets/light">lights</a>, <a
+                                href="https://github.com/xeolabs/scenehub/blob/master/assets/camera">cameras</a>, <a
+                                href="https://github.com/xeolabs/scenehub/blob/master/assets/object">objects</a>, and
+                        even
+                        entire <a
+                                href="https://github.com/xeolabs/scenehub/blob/master/assets/scene">scenes</a>.</p>
+                </li>
+                <li><p class="bulletHeading">Repository is optional</p>
+
+                    <p>You're free to define your own custom assets with the API, while falling back on the repository for
+                        generic things like skyboxes. You can also configure the API to load assets from your own JSON
+                        source, or even just not have a repo.</p>
                 </li>
                 <li><p><strong>Open Source</strong><br>Licensed under both the GPL and MIT licenses - pick whichever you
                     need.
@@ -91,8 +128,13 @@
                         request.</p>
                 </li>
             </ul>
+            <!--<p class="sectionHeading">Developers</p>-->
+            <!--<ul>-->
+            <!--<li><p><a href="http://xeolabsblog.blogspot.de/search/label/scenehub" target="other">Blog</a></p></li>-->
+            <!--<li><p><a href="http://xeolabsblog.blogspot.de/search/label/scenehub" target="other">Blog</a></p></li>-->
+            <!--</ul>-->
         </div>
-        <div style="float:left; width:65%; padding-left:25px; padding-top:10px;">
+        <div class="col right">
             <p class="sectionHeading">Quick Start</p>
 
             <p>First, hotlink to the <a href="http://xeolabs.github.com/scenehub/api/v0/scenehub.js">SceneHub API
@@ -102,7 +144,7 @@
             <pre>&lt;script src="http://xeolabs.github.com/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
             <p>Then build a scene. We're going to build an articulated object hierarchy using three types of asset:
                 a scene <a href="https://github.com/xeolabs/scenehub/blob/master/assets/object/skies/clouds.json"
-                     target="other">object</a>, a <a
+                           target="other">object</a>, a <a
                         href="https://github.com/xeolabs/scenehub/blob/master/assets/geometry/prims/box.json"
                         target="other">geometry</a> and a surface <a
                         href="https://github.com/xeolabs/scenehub/blob/master/assets/appearance/heroes/superman.json"
@@ -119,15 +161,16 @@ var scene = scenehub.createScene({
     },
 
     objects:[
+        // Instance a library object (a skybox) and override its scale
         {
-            // Reuse a library object (a skybox), override its scale
             useObject:"skies.clouds",
             scale: { x: 1000, y: 1000, z: 1000 }
         },
+        // Group object
         {
             translate:{ y:-10 },
             objects:[
-                // Reuse geometry and appearance assets
+                 // Object using geometry and appearance assets
                 {
                     id: "superman",
                     useGeometry:"prims.box",
@@ -142,10 +185,10 @@ var scene = scenehub.createScene({
 
 
 </pre>
-            <p>Note that you can also create assets through the
-                API, so you're not actually dependent on the asset library.Now let's spin the cube around:</p>
+            <p>Now let's start the cube spinning:</p>
 <pre>
-//
+// on() is used to listen for data changes on scene elements.
+// This is the primary way to read data from SceneHub.
 scene.on("objects.superman", function (superman) {
 
       var angle = 0;
@@ -157,7 +200,8 @@ scene.on("objects.superman", function (superman) {
       });
     });
         </pre>
-            <p><a href="http://codepen.io/xeolabs/pen/gfnlD" target="other">Run this example live</a> over at CodePen.</p>
+            <p><a href="http://codepen.io/xeolabs/pen/gfnlD" target="other">Run this example live</a> over at CodePen.
+            </p>
         </div>
     </div>
 </div>
@@ -165,9 +209,8 @@ scene.on("objects.superman", function (superman) {
 
 <br>
 <a href="https://github.com/xeolabs/SceneHub" target="_blank"><img
-        style="position: absolute; top: 0; right: 0; border: 0;"
-        src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
-        alt="Fork me on GitHub"></a>
+        style="position: absolute; top: 0; left: 0; border: 0;"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
 
 <script>
 
