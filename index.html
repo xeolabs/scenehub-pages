@@ -43,14 +43,14 @@
     <h1>SceneHub</h1>
 
     <a
-        href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
+            href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/wiki">Documentation</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>
     <br>
 
     <h2>Scalable JSON-Based WebGL Asset Repository</h2>
 
-    <p class="elevatorPitch">Build 3D scenes fast from a library of reusable assets</p>
+    <p class="elevatorPitch">Build 3D scenes fast on a library of reusable assets</p>
 
     <br>
     <br>
@@ -63,27 +63,31 @@
                 <li><p class="bulletHeading">Scalable</p>
 
                     <p>An extensible library of JSON-encoded WebGL assets</p></li>
-                <li><p class="bulletHeading">Build a scene anywhere</p>
+                <li><p class="bulletHeading">Build a scene in minutes</p>
 
-                    <p>Hotlink the API script into your page or blog and start building scenes containing assets. The
-                        assets are loaded on-demand and cross-domain - just reference them by ID.</p></li>
-                <li><p><strong>SceneJS on rails</strong><br>The API is a wrapper for SceneJS, giving you a powerful
-                    SceneJS-on-rails experience. You can skip the asset library altogether and just use the API as a
-                    stand-alone WebGL engine.
+                    <p>Hotlink to the API script and build scenes in JSON. As you reference assets the API loads
+                        them on-demand, cross-domain. Great for code sharing.</p></li>
+
+                <li><p><strong>SceneJS on rails</strong><br>The API is built around <a href="http://scenejs.org">SceneJS
+                    V3</a> and follows <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
+                    to provide a very slick scene building experience. Skip the asset repository altogether if you
+                    want to manage the assets yourself and use the API as a stand-alone WebGL engine.
                 </p>
                 </li>
 
                 <li><p class="bulletHeading">Plug and play</p>
 
-                    <p>Asset reuse at multiple levels: attributes, objects, object graphs, and even entire
-                        scenes</p>
+                    <p>Almost everything is a reusable asset: attributes, objects, object graphs, and even entire
+                        scenes.</p>
                 </li>
-                <li><p><strong>Open Source</strong><br>Licensed under both the GPL and MIT licenses - pick whichever.
+                <li><p><strong>Open Source</strong><br>Licensed under both the GPL and MIT licenses - pick whichever you
+                    need.
                 </p>
                 </li>
                 <li><p class="bulletHeading">Fork it</p>
 
-                    <p>Fork the repository and add your own assets. Want to share them? Submit a pull
+                    <p><a href="https://github.com/xeolabs/SceneHub">Fork the repository</a> and add your own assets.
+                        Want to share them? Submit a pull
                         request.</p>
                 </li>
             </ul>
@@ -96,55 +100,64 @@
             </p>
 
             <pre>&lt;script src="http://xeolabs.github.com/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
-            <p>Then build a scene - we're going to build an articulated object hierarchy using
-                one geometry asset and a couple of surface appearance assets:</p>
+            <p>Then build a scene. We're going to build an articulated object hierarchy using three types of asset:
+                a scene <a href="https://github.com/xeolabs/scenehub/blob/master/assets/object/skies/clouds.json"
+                     target="other">object</a>, a <a
+                        href="https://github.com/xeolabs/scenehub/blob/master/assets/geometry/prims/box.json"
+                        target="other">geometry</a> and a surface <a
+                        href="https://github.com/xeolabs/scenehub/blob/master/assets/appearance/heroes/superman.json"
+                        target="other">appearance</a>: </p>
 
         <pre>
 
 var scenehub = new SceneHub();
 
 var scene = scenehub.createScene({
+
     camera:{
         eye:{ z:-100 }
     },
+
     objects:[
         {
-            translate:{ y:5 },
-            rotate: { y : 1, angle: 45 },
+            // Reuse a library object (a skybox), override its scale
+            useObject:"skies.clouds",
+            scale: { x: 1000, y: 1000, z: 1000 }
+        },
+        {
+            translate:{ y:-10 },
             objects:[
+                // Reuse geometry and appearance assets
                 {
                     id: "superman",
                     useGeometry:"prims.box",
                     useAppearance:"heroes.superman",
-                    scale:{ x:10, y:10, z:10 },
-                    translate:{ x:-10 }
-                },
-                {
-                    id: "generalZod",
-                    useGeometry:"prims.box",
-                    useAppearance:"villains.generalZod",
-                    scale:{ x:10, y:10, z:10 },
-                    rotate:{ x:1, y:1, z:1, angle:-20 },
-                    translate:{ x:10 }
+                    scale:{ x:10,y:10, z:10 },
+                    rotate: { y: 1, z: 1, angle: 30 }
                 }
             ]
         }
     ]
 });
-</pre>
-            Voilà - up pops a canvas containing our scene:
-            <img src="">
 
-            Now let's update the scale and position of one of the objects:
+
+</pre>
+            <p>Note that you can also create assets through the
+                API, so you're not actually dependent on the asset library.Now let's spin the cube around:</p>
 <pre>
-scene.on("objects.superman",
-    function (superman) {
+//
+scene.on("objects.superman", function (superman) {
+
+      var angle = 0;
+
+      scene.on("tick", function() {
         superman.set({
-            scale: { y: 5 },
-            translate: { y: 3 }
+          rotate: { angle: angle += 0.5 }
         });
+      });
     });
         </pre>
+            <p><a href="http://codepen.io/xeolabs/pen/gfnlD" target="other">Run this example live</a> over at CodePen.</p>
         </div>
     </div>
 </div>
