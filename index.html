@@ -64,10 +64,12 @@
     <a href="https://github.com/xeolabs/scenehub/tree/master/examples/ex#examples">Examples</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/wiki">Docs</a>&nbsp;|&nbsp;<a
         href="https://github.com/xeolabs/scenehub/tree/master/assets">Assets</a>&nbsp;|&nbsp;<a
-        href="http://xeolabsblog.blogspot.de/search/label/scenehub">Blog</a>
+        href="http://xeolabsblog.blogspot.de/search/label/scenehub">Blog</a>&nbsp;|&nbsp;<a
+        href="http://about.me/kaylindsay">Contact</a>
     <br>
 
     <h2>Build WebGL scenes fast</h2>
+
     <p class="elevatorPitch">An JSON-based 3D engine with a shared public asset repository</p>
 </div>
 <div id="image">
@@ -113,7 +115,8 @@
                 </li>
                 <li><p class="bulletHeading">Repository is optional</p>
 
-                    <p>You're free to define your own custom assets with the API, while falling back on the repository for
+                    <p>You're free to define your own custom assets with the API, while falling back on the repository
+                        for
                         generic things like skyboxes. You can also configure the API to load assets from your own JSON
                         source, or even just not have a repo.</p>
                 </li>
@@ -128,11 +131,11 @@
                         request.</p>
                 </li>
             </ul>
-            <!--<p class="sectionHeading">Developers</p>-->
-            <!--<ul>-->
-            <!--<li><p><a href="http://xeolabsblog.blogspot.de/search/label/scenehub" target="other">Blog</a></p></li>-->
-            <!--<li><p><a href="http://xeolabsblog.blogspot.de/search/label/scenehub" target="other">Blog</a></p></li>-->
-            <!--</ul>-->
+            <p class="sectionHeading">Developers</p>
+            <ul>
+                <li><p><a href="https://github.com/xeolabs/SceneHub/issues" target="other">Sourcecode</a></p></li>
+                <li><p><a href="https://github.com/xeolabs/SceneHub/issues" target="other">Issues</a></p></li>
+            </ul>
         </div>
         <div class="col right">
             <p class="sectionHeading">Quick Start</p>
@@ -185,6 +188,9 @@ var scene = scenehub.createScene({
 
 
 </pre>
+            <p>And voilà, one cube with a textured appearance, surrounded by a skybox:</p><br>
+            <a href="http://jsfiddle.net/qQj7d/" target="other"> <img style="display: block; margin-left: auto; margin-right: auto;" src="images/superman-demo.jpg"/></a>
+
             <p>Now let's start the cube spinning:</p>
 <pre>
 // on() is used to listen for data changes on scene elements.
@@ -201,8 +207,7 @@ scene.on("objects.superman", function (superman) {
     });
         </pre>
             <!--<iframe width="100%" height="350" src="http://jsfiddle.net/qQj7d/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>-->
-            <p><a href="http://jsfiddle.net/qQj7d/" target="other">Run this example</a>.
-            </p>
+            <p><a href="http://jsfiddle.net/qQj7d/" target="other">Run this example</a></p>
         </div>
     </div>
 </div>
