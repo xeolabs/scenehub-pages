@@ -69,21 +69,19 @@
 <body>
 
 <div id="header">
-    <a href="http://about.me/kaylindsay"><img style="float: right; padding-top:35px;"
-                                              src="images/a-xeolabs-project.png"></a>
+   <img style="float: right; padding-top:35px;"
+                                              src="images/a-xeolabs-project.png">
 
     <h1>SceneHub</h1>
 
     <a href="https://github.com/scenehub/scenehub/wiki/Examples">Examples</a>&nbsp;|&nbsp;<a
         href="https://github.com/scenehub/scenehub/wiki">Docs</a>&nbsp;|&nbsp;<a
-        href="https://github.com/SceneHub/scenehub-assets/tree/master/assets">Assets</a>&nbsp;|&nbsp;<a
-        href="http://xeolabsblog.blogspot.de/search/label/scenehub">Blog</a>&nbsp;|&nbsp;<a
-        href="http://about.me/kaylindsay">Contact</a>
+        href="https://github.com/SceneHub/scenehub-assets/tree/master/assets">Assets</a>
     <br>
 
-    <h2>Build WebGL scenes fast</h2>
+    <h2>Build WebGL graphics fast</h2>
 
-    <p class="elevatorPitch">An open source JSON-based WebGL engine with sharable assets</p>
+    <p class="elevatorPitch">An open source JSON-based engine with sharable assets</p>
 </div>
 <div id="image">
     <img src="images/crane.jpg" width="920px" height="260px"/>
@@ -96,7 +94,7 @@
             <ul>
                 <li><p class="bulletHeading">Build a scene in minutes</p>
 
-                    <p class="bullet">Create 3D WebGL scenes in JSON through an API built on <a
+                    <p class="bullet">An SDK built on <a
                             href="http://scenejs.org">SceneJS</a> that uses <a
                             href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention-over-configuration</a>
                         for easy scene definition.
@@ -105,9 +103,10 @@
 
                 <li><p class="bulletHeading">Asset repository</p>
 
-                    <p class="bullet">By default, the API is linked to a GitHub <a
-                            href="https://github.com/scenehub/scenehub-assets" target="other">repository</a>
-                        of generic assets which it will load on demand as you reference them in your scenes.
+                    <p class="bullet">By default, the SDK is linked to a repository
+                        of generic assets, which are loaded on demand as you reference them in your scenes. The repository
+                        is mirrored at <a href="https://github.com/scenehub/scenehub-assets" target="other">GitHub</a>,
+                        where anybody can contribute assets.
                     </p>
                 </li>
 
@@ -134,24 +133,17 @@
 
                     <p class="bullet">You're free to <a
                             href="https://github.com/SceneHub/scenehub/wiki/Examples#create-library-asset-in-memory">define
-                        your own custom assets</a> with the API, while falling
+                        your own custom assets</a> with the SDK, while falling
                         back on the repository
                         for
-                        generic things like skyboxes. You can also configure the API to load assets from your <a
+                        generic things like skyboxes. You can also configure the SDK to load assets from your <a
                                 href="https://github.com/SceneHub/scenehub/wiki/Examples#configure-asset-source">own
                             JSON
-                            source</a>, or even just not have a repo.</p>
+                            source</a>, or even just not use a repository altogether.</p>
                 </li>
                 <li><p><strong>Open Source</strong><br>Licensed under both the GPL and MIT licenses - pick whichever you
                     need.
                 </p>
-                </li>
-                <li><p class="bulletHeading">Fork it</p>
-
-                    <p class="bullet"><a href="https://github.com/scenehub/scenehub-assets">Fork the repository</a> and
-                        add your own assets.
-                        Want to share them? Submit a pull
-                        request.</p>
                 </li>
             </ul>
             <p class="sectionHeading">Developers</p>
@@ -163,7 +155,7 @@
         <div class="col right">
             <p class="sectionHeading">Quick Start</p>
 
-            <p>First, hotlink to the <a href="http://scenehub.org/api/v0/scenehub.js">SceneHub API
+            <p>First, hotlink to the <a href="http://scenehub.github.io/scenehub/api/v0/scenehub.js">SceneHub SDK
                 library</a>:
             </p>
 
@@ -231,8 +223,7 @@ scene.on("objects.superman", function (superman) {
       });
     });
         </pre>
-            <!--<iframe width="100%" height="350" src="http://jsfiddle.net/qQj7d/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>-->
-            <p><a href="http://jsfiddle.net/qQj7d/" target="other">Run this example</a></p>
+           <p><a href="http://jsfiddle.net/qQj7d/" target="other">Run this example</a></p>
         </div>
     </div>
 </div>
