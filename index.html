@@ -69,8 +69,8 @@
 <body>
 
 <div id="header">
-   <img style="float: right; padding-top:35px;"
-                                              src="images/a-xeolabs-project.png">
+    <img style="float: right; padding-top:35px;"
+         src="images/a-xeolabs-project.png">
 
     <h1>SceneHub</h1>
 
@@ -103,10 +103,11 @@
 
                 <li><p class="bulletHeading">Asset repository</p>
 
-                    <p class="bullet">By default, the SDK is linked to a repository
-                        of generic assets, which are loaded on demand as you reference them in your scenes. The repository
-                        is mirrored at <a href="https://github.com/scenehub/scenehub-assets" target="other">GitHub</a>,
-                        where anybody can contribute assets.
+                    <p class="bullet">A default backend repository
+                        of generic assets, loaded on-demand as you reference
+                        them in your scenes. The repository is hosted at <a href="http://firebase.com">Firebase</a>
+                        and mirrored at <a href="https://github.com/scenehub/scenehub-assets" target="other">GitHub</a>,
+                        where people can contribute assets for peer review.
                     </p>
                 </li>
 
@@ -151,12 +152,36 @@
                 <li><p><a href="https://github.com/scenehub/" target="other">Sourcecode</a></p></li>
                 <li><p><a href="https://github.com/scenehub/scenehub/issues" target="other">Issues</a></p></li>
             </ul>
+
+            <br><br>
+
+            <!--<p class="sectionHeading">Services we use</p>-->
+            <!--<img src="images/firebaseLogo.png">-->
+
+            <!--<p><a href="http://firebase.com">Firebase</a> is a cloud database that stores our generic asset-->
+                <!--repository</p>-->
+            <!--<br>-->
+            <!--<img src="images/githubLogo.png">-->
+
+            <!--<p><a href="http://github.com">GitHub</a> stores our project files, plus a mirror of the generic asset-->
+                <!--repository</p>-->
+            <!--<br>-->
+            <!--<img src="images/webgl_logo.jpg">-->
+
+            <!--<p><a href="http://www.khronos.org/webgl/">WebGL</a> is a cross-platform, royalty-free web standard for a-->
+                <!--low-level 3D graphics API based on OpenGL ES 2.0, exposed through the HTML5 Canvas element as-->
+                <!--Document Object Model interfaces.</p>-->
+            <!--<br>-->
+            <!--<img src="images/a-xeolabs-project2.png">-->
+
+            <!--<p><a href="http://www.khronos.org/webgl/">SceneJS</a> is an open-source 3D engine for JavaScript which-->
+                <!--provides a high-performance JSON-based scene graph on WebGL.</p>-->
         </div>
         <div class="col right">
             <p class="sectionHeading">Quick Start</p>
 
-            <p>First, hotlink to the <a href="http://scenehub.github.io/scenehub/api/v0/scenehub.js">SceneHub SDK
-                library</a>:
+            <p>First, include our <a href="http://scenehub.github.io/scenehub/api/v0/scenehub.js">JavaScript
+                library</a> in the &lt;head&gt; tag of your web app:
             </p>
 
             <pre>&lt;script src="http://scenehub.github.io/scenehub/api/v0/scenehub.js"&gt;&lt;/script&gt;</pre>
@@ -223,7 +248,18 @@ scene.on("objects.superman", function (superman) {
       });
     });
         </pre>
-           <p><a href="http://jsfiddle.net/xeolabs/3sPKt/" target="other">Run this example</a></p>
+            <p><a href="http://jsfiddle.net/xeolabs/3sPKt/" target="other">Run this example</a></p>
+
+            <!--<p>Coolnesses to note here:</p>-->
+            <!--<ul>-->
+                <!--<li><p>The SDK provides defaults for almost everything, so we're just defining where we want to-->
+                    <!--override</p>-->
+                <!--</li>-->
+                <!--<li><p>Assets (including textures) are loaded cross-domain <b>without</b> CORS or JSONP. The JSON Assets-->
+                    <!--are-->
+                    <!--loaded through a WebSocket, which is way faster than HTTP when we have many fine-grained assets.</p>-->
+                <!--</li>-->
+            <!--</ul>-->
         </div>
     </div>
 </div>
